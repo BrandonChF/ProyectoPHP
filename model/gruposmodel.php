@@ -34,7 +34,7 @@ class GruposModel extends Model{
     }
 
     public function verGrupos($id){
-        var_dump($_SESSION);
+        //var_dump($_SESSION);
         try {
             $item = new classGrupos();
             //code...
@@ -85,7 +85,7 @@ class GruposModel extends Model{
     
             } catch (PDOException $th) {
                 //throw $th;
-                var_dump($th);
+                //var_dump($th);
                 return false;
             }
     }//fin de actualizar
