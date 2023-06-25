@@ -13,6 +13,6 @@ db = 'u484426513_apireact'#nombre de la base datos -->
     define('CHARSET', 'utf8mb4');
     
     //Url del proyecto web
-    define('URL', 'http://localhost/ProyectoPHP/');
+    define('URL', 'http://localhost/mvcfinal/ProyectoPHP/');
 
 ?>

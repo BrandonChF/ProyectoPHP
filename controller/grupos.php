@@ -82,7 +82,27 @@ class Grupos extends Controller{
         $this->view->mensaje = "Detalle grupo";
         $this->view->mensajeResultado = $mensajeResultado;        
         $this->view->render('grupos/detalle');
-    }    
+    }
+    
+    //eliminargrupo
+    function eliminargrupo( $param = null ){   
+        $id = $param[0];
+        if ($this->model->eliminargrupo($id)){
+            $mensajeResultado = '
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    Se elimino el Registro
+                </div>';
+        }else{
+            $mensajeResultado = '
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    No se elimino el Registro
+                </div>';
+        }
+        $this->view->mensajeResultado = $mensajeResultado;        
+        $this->render();
+    }
 }
 
 ?>
