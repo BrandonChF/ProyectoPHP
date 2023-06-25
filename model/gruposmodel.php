@@ -71,24 +71,40 @@ class GruposModel extends Model{
                     var_dump($th);
                     return false;
                 }
-            }
+    }
 
             //actualizarGrupo
-      public function actualizarGrupo($datos){
-        //            var_dump($datos);
-                try {
-                    //code...                                        
-                    $stringSQL = 'UPDATE grupo SET nombre=:nombre WHERE id=:id ;';
-                    $query = $this->db->connect()->prepare($stringSQL);
-                    $query->execute($datos);
-                    return true;
-        
-                } catch (PDOException $th) {
-                    //throw $th;
-                    var_dump($th);
-                    return false;
-                }
-            }   
+    public function actualizarGrupo($datos){
+    //            var_dump($datos);
+            try {
+                //code...                                        
+                $stringSQL = 'UPDATE grupo SET nombre=:nombre WHERE id=:id ;';
+                $query = $this->db->connect()->prepare($stringSQL);
+                $query->execute($datos);
+                return true;
+    
+            } catch (PDOException $th) {
+                //throw $th;
+                var_dump($th);
+                return false;
+            }
+    }//fin de actualizar
+       
+    //eliminargrupo
+    public function eliminargrupo($id){        
+        try {            
+            //code...
+            $stringSQL = "DELETE FROM `grupo` WHERE id =:id;";
+            $query = $this->db->connect()->prepare($stringSQL);
+            $query->execute(['id'=>$id]);
+            
+            return true;
+        } catch (PDOException $th) {
+            //throw $th;
+            var_dump($th);
+            return false;
+        }           
+    }
         
 
 
