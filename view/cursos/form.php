@@ -1,4 +1,4 @@
-    <div class="mb-3" <?php echo isset($this->datos->id)? "" :"hidden";?>>
+    <div class="mb-3" <?php echo isset($this->datos->id)? "" :"hidden";?> hidden>
       <label for="" class="form-label">Id</label>
       <input type="text" 
         class="form-control" name="id" id="id" aria-describedby="helpId" placeholder="" 
