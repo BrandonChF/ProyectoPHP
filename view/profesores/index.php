@@ -54,7 +54,7 @@
                                     <td>'.$datos ->usuario.'</td>
                                     <td>'.$datos ->nacionalidad.'</td>                             
                                     <td>
-                                        <a name="eliminar" id="eliminar" class="btn btn-danger" href="'.constant('URL').'profesores/eliminarProfesor/'.$datos->id.'" role="button">Eliminar</a>
+                                        <a name="eliminar" id="eliminar" class="btn btn-danger mb-2" href="'.constant('URL').'profesores/eliminarProfesor/'.$datos->id.'" role="button">Eliminar</a>
                                         ||
                                         <a name="editar" id="editar" class="btn btn-primary" href="'.constant('URL').'profesores/verProfesores/'.$datos->id.'" role="button">Editar</a>
                                     </td>
