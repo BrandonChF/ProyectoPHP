@@ -59,7 +59,7 @@
 
         //INSERT INTO profesor(id, cedula, correoelectronico, telefono, telefonocelular, fechanacimiento, sexo, direccion, nombre, apellidopaterno, apellidomaterno, nacionalidad, usuario, idcarreras) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]','[value-9]','[value-10]','[value-11]','[value-12]','[value-13]','[value-14]')
         public function insertarProfesor($datos){
-            var_dump($datos);
+            //var_dump($datos);
             try {
                 //code...
                 $datos['id'] = "0";
@@ -81,13 +81,13 @@
 
             } catch (PDOException $th) {
                 throw $th;
-                var_dump($th);
+                //var_dump($th);
                 return false;
             }
         }
 
         public function verProfesores($id){
-            var_dump($_SESSION);
+            //var_dump($_SESSION);
             try {
                 $item = new classProfesores();
                 //code...
@@ -109,7 +109,7 @@
         }//fin de verProfesores
 
         public function actualizarProfesor($datos){
-                  var_dump($datos);
+                  //var_dump($datos);
                     try {
                         $datos['usuario'] = "BRENJUAN";
                         $stringSQL = 'UPDATE profesor SET cedula=:cedula,
@@ -128,7 +128,7 @@
             
                     } catch (PDOException $th) {
                         throw $th;
-                        var_dump($th);
+                        //var_dump($th);
                         return false;
                     }
             }//fin de actualizar
@@ -143,7 +143,7 @@
                 return true;
             } catch (PDOException $th) {
                 //throw $th;
-                var_dump($th);
+                //var_dump($th);
                 return false;
             }           
         }//fin de eliminar
