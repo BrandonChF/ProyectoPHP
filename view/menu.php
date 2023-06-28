@@ -22,6 +22,15 @@
     <a class="dropdown-item" href="#tab4Id">Action</a>
   </div>
 </li>
+
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Profesores</a>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="<?php echo constant('URL');?>profesores">Consulta</a>
+    <a class="dropdown-item" href="<?php echo constant('URL');?>profesores/crear">Crear</a>
+  </div>
+</li>
+
 <li class="nav-item" role="presentation">
   <a href="#tab5Id" class="nav-link" data-bs-toggle="tab">Another link</a>
 </li>
