@@ -5,6 +5,7 @@ class Estudiantes extends Controller{
         parent::connectionSession();
 
         $this->view->datos = [];
+        $this->view->grupos = [];
         $this->view->mensaje = "Seccion Estudiantes";
         $this->view->mensajeResultado = "";        
     }
@@ -16,7 +17,9 @@ class Estudiantes extends Controller{
 
     function crear(){   //para ver la vista                   
         $this->view->datos = [];
-        $this->view->mensaje = "Agregar Estudiante";
+        $grupos = $this->model->getGrupos();
+        $this->view->grupos = $grupos;
+        $this->view->mensaje = "Crear Estudiante";
         $this->view->render('estudiantes/crear');
     }
 
@@ -48,8 +51,10 @@ class Estudiantes extends Controller{
     function verEstudiante( $param = null ){        
         $id = $param[0];
 
-        $datos = $this->model->verEstudiante($id);        
+        $datos = $this->model->verEstudiantes($id);        
         $this->view->datos = $datos;
+        $grupos = $this->model->getGrupos();
+        $this->view->grupos = $grupos;
         $this->view->mensaje = "Detalle del estudiante";
         $this->view->render('estudiantes/detalle');
     }

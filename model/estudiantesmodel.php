@@ -1,7 +1,7 @@
 <?php
 
 include_once 'class/estudiantes.php';
-
+include_once 'class/grupos.php';
 
 class EstudiantesModel extends Model{
 
@@ -32,6 +32,29 @@ class EstudiantesModel extends Model{
             return [];
         }
     }
+    public function getGrupos(){
+        $items = [];
+
+        try {
+            $stringSQL = "SELECT * FROM `grupo` order by id DESC;";
+            $query = $this->db->connect()->query($stringSQL);
+
+            while ( $row = $query->fetch()){//obtiene todas las filas
+                $item = new classGrupos();
+
+                foreach ($row as $key => $value) {
+                    # code...
+                    $item->$key = $value;
+                }
+                array_push($items, $item);
+            }
+            return $items;
+            
+        } catch (PDOException $th) {
+            //throw $th;
+            return [];
+        }
+    }//fin
     # INSERT INTO estudiante(id, cedula, correoelectronico, telefono, telefonocelular, fechanacimiento, sexo, direccion, nombre, apellidopaterno, apellidomaterno, nacionalidad, idCarreras, usuario) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]','[value-9]','[value-10]','[value-11]','[value-12]','[value-13]','[value-14]')
 
 
@@ -39,20 +62,30 @@ class EstudiantesModel extends Model{
         try {
             //code...
             $datos['id'] = "0";
-            $datos['usuario'] = "BranRrelos";
-            $stringSQL = 'INSERT INTO estudiante(id, cedula, correoelectronico, telefono, telefonocelular, fechanacimiento, sexo, direccion, nombre, apellidopaterno, apellidomaterno, nacionalidad, idCarreras, usuario) VALUES ( :id, :cedula, :correoelectronico, :telefono, :telefonocelular, :fechanacimiento, :sexo, :direccion, :nombre, :apellidopaterno, :apellidomaterno, :nacionalidad, :idCarreras, :usuario);';
+            $datos['usuario'] = "BRENJUAN";
+            $stringSQL = 'INSERT INTO estudiante(
+                id, cedula, correoelectronico, 
+                telefono, telefonocelular, fechanacimiento, 
+                sexo, direccion, nombre, apellidopaterno, 
+                apellidomaterno, nacionalidad, 
+                usuario, idcarreras) VALUES (
+                    :id, :cedula, :correoelectronico, 
+                    :telefono, :telefonocelular, :fechanacimiento, 
+                    :sexo, :direccion, :nombre, :apellidopaterno, 
+                    :apellidomaterno, :nacionalidad, :usuario, 
+                    :idcarreras);';
             $query = $this->db->connect()->prepare($stringSQL);
             $query->execute($datos);
             return true;
 
         } catch (PDOException $th) {
-            //throw $th;
+            throw $th;
             //var_dump($th);
             return false;
         }
     }
 
-    public function verEstudiante($id){
+    public function verEstudiantes($id){
        /*  var_dump($_SESSION); */
         try {
             $item = new classEstudiantes();
@@ -77,23 +110,27 @@ class EstudiantesModel extends Model{
       //actualizarcurso
       public function actualizarEstudiante($datos){
 //            var_dump($datos);
-        try {
-            //code... 
-            //#UPDATE estudiante SET cedula='[value-2]',correoelectronico='[value-3]',telefono='[value-4]',telefonocelular='[value-5]',fechanacimiento='[value-6]',sexo='[value-7]',direccion='[value-8]',nombre='[value-9]',apellidopaterno='[value-10]',apellidomaterno='[value-11]',nacionalidad='[value-12]',idCarreras='[value-13]',usuario='[value-14]' WHERE  id='[value-1]'
-             //      
-            $datos['usuario'] = "BranRrelos";
-            $stringSQL = 'UPDATE estudiante SET cedula=:cedula,usuario=:usuario WHERE id=:id ;';
+try {
+    
+    $stringSQL = 'UPDATE estudiante SET cedula=:cedula,
+        correoelectronico=:correoelectronico,
+        telefono=:telefono, 
+        telefonocelular =:telefonocelular, 
+        fechanacimiento =:fechanacimiento, sexo =:sexo, 
+        direccion=:direccion, nombre=:nombre, 
+        apellidopaterno=:apellidopaterno, 
+        apellidomaterno=:apellidomaterno, 
+        nacionalidad=:nacionalidad, idcarreras=:idcarreras, 
+        usuario=:usuario WHERE id=:id ;';
+    $query = $this->db->connect()->prepare($stringSQL);
+    $query->execute($datos);
+    return true;
 
-            //$stringSQL = 'UPDATE estudiante SET cedula=:cedula,correoelectronico=:correoelectronico,telefono=:telefono,telefonocelular=:telefonocelular,fechanacimiento=:fechanacimiento,sexo=:sexo,direccion=:direccion,nombre=:nombre,apellidopaterno=:apellidopaterno,apellidomaterno=:apellidomaterno,nacionalidad=:nacionalidad,idCarreras=:idCarreras,usuario=:usuario WHERE id=:id ;';
-            $query = $this->db->connect()->prepare($stringSQL);
-            $query->execute($datos);
-            return true;
-
-        } catch (PDOException $th) {
-            //throw $th;
-           // var_dump($th);
-            return false;
-        }
+} catch (PDOException $th) {
+    throw $th;
+    //var_dump($th);
+    return false;
+}
     }   
 
     //eliminarcurso

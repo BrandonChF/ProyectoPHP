@@ -111,7 +111,7 @@
         public function actualizarProfesor($datos){
                   //var_dump($datos);
                     try {
-                        $datos['usuario'] = "BRENJUAN";
+                        
                         $stringSQL = 'UPDATE profesor SET cedula=:cedula,
                             correoelectronico=:correoelectronico,
                             telefono=:telefono, 
