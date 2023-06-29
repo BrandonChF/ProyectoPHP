@@ -120,8 +120,8 @@
                             direccion=:direccion, nombre=:nombre, 
                             apellidopaterno=:apellidopaterno, 
                             apellidomaterno=:apellidomaterno, 
-                            nacionalidad=:nacionalidad, idcarreras=:idcarreras, 
-                            usuario=:usuario WHERE id=:id ;';
+                            nacionalidad=:nacionalidad, idcarreras=:idcarreras 
+                            WHERE id=:id ;';
                         $query = $this->db->connect()->prepare($stringSQL);
                         $query->execute($datos);
                         return true;

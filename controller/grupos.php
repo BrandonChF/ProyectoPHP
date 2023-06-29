@@ -81,7 +81,7 @@ class Grupos extends Controller{
         $this->view->datos = $datos;
         $this->view->mensaje = "Detalle grupo";
         $this->view->mensajeResultado = $mensajeResultado;        
-        $this->view->render('grupos/detalle');
+        $this->render();
     }
     
     //eliminargrupo

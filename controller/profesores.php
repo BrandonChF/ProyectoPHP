@@ -95,7 +95,7 @@ class Profesores extends Controller
         $this->view->datos = $datos;
         $this->view->mensaje = "Detalle Profesor";
         $this->view->mensajeResultado = $mensajeResultado;
-        $this->view->render('profesores/detalle');
+        $this->render();
         
     }
 
