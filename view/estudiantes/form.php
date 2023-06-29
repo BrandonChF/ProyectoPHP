@@ -103,11 +103,7 @@
         <small id="helpId" class="form-text text-muted">Nacionalidad aca</small>
       </div>
 
-      <div class="mb-3" hidden>
-        <label for="" class="form-label">Usuario</label>
-        <input type="text" class="form-control" name="usuario" id="usuario" aria-describedby="helpId" required="true" placeholder="" value="<?php echo isset($this->datos->usuario) ? $this->datos->usuario : ""; ?>">
-        <small id="helpId" class="form-text text-muted">Nacionalidad aca</small>
-      </div>
+
 
       <?php
 
