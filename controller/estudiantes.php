@@ -10,12 +10,26 @@ class Estudiantes extends Controller{
         $this->view->mensajeResultado = "";        
     }
     function render(){
+
+        if (!parent::isAuthenticated()) {
+            // Redirigir al inicio de sesión o mostrar un mensaje de error
+            header("Location: " . constant('URL') . "usuarios/verLogin");
+            exit();
+          }
+
         $datos = $this->model->getEstudiantes();               
         $this->view->datos = $datos;
         $this->view->render('estudiantes/index');
     }
 
-    function crear(){   //para ver la vista                   
+    function crear(){
+        
+        if (!parent::isAuthenticated()) {
+            // Redirigir al inicio de sesión o mostrar un mensaje de error
+            header("Location: " . constant('URL') . "usuarios/verLogin");
+            exit();
+          }
+          //para ver la vista                   
         $this->view->datos = [];
         $grupos = $this->model->getGrupos();
         $this->view->grupos = $grupos;
@@ -42,13 +56,28 @@ class Estudiantes extends Controller{
         $this->render();
     }
 
-    function detalle(){                      
+    function detalle(){
+        
+        if (!parent::isAuthenticated()) {
+            // Redirigir al inicio de sesión o mostrar un mensaje de error
+            header("Location: " . constant('URL') . "usuarios/verLogin");
+            exit();
+          }
+
         $this->view->datos = [];
         $this->view->mensaje = "Detalles del Cursos";
         $this->view->render('cursos/detalle');
     }
 
-    function verEstudiante( $param = null ){        
+    function verEstudiante( $param = null ){  
+        
+        if (!parent::isAuthenticated()) {
+            // Redirigir al inicio de sesión o mostrar un mensaje de error
+            header("Location: " . constant('URL') . "usuarios/verLogin");
+            exit();
+          }
+
+
         $id = $param[0];
 
         $datos = $this->model->verEstudiantes($id);        

@@ -143,8 +143,8 @@
     </div>
   </div>
   <div class="mb-3">
-    <button type="reset" class="btn btn-danger">Reset</button>
+    <button type="reset" class="btn btn-danger">Limpiar</button>
     ||
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Guardar</button>
   </div>
 </div>

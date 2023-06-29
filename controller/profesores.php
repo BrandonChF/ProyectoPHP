@@ -13,13 +13,28 @@ class Profesores extends Controller
     }
     function render()
     {
+
+        if (!parent::isAuthenticated()) {
+            // Redirigir al inicio de sesión o mostrar un mensaje de error
+            header("Location: " . constant('URL') . "usuarios/verLogin");
+            exit();
+          }
+
         $datos = $this->model->getProfesores();
         $this->view->datos = $datos;
         $this->view->render('profesores/index');
     }
 
     function crear()
-    {   //para ver la vista                   
+    { 
+        
+        if (!parent::isAuthenticated()) {
+            // Redirigir al inicio de sesión o mostrar un mensaje de error
+            header("Location: " . constant('URL') . "usuarios/verLogin");
+            exit();
+          }
+          
+          //para ver la vista                   
         $this->view->datos = [];
         $grupos = $this->model->getGrupos();
         $this->view->grupos = $grupos;
@@ -50,6 +65,13 @@ class Profesores extends Controller
 
     function detalle()
     {
+
+        if (!parent::isAuthenticated()) {
+            // Redirigir al inicio de sesión o mostrar un mensaje de error
+            header("Location: " . constant('URL') . "usuarios/verLogin");
+            exit();
+          }
+
         $this->view->datos = [];
         $this->view->mensaje = "Detalles de los profesores";
         $this->view->render('profesores/detalle');
@@ -57,6 +79,13 @@ class Profesores extends Controller
 
     function verProfesores($param = null)
     {
+        
+        if (!parent::isAuthenticated()) {
+            // Redirigir al inicio de sesión o mostrar un mensaje de error
+            header("Location: " . constant('URL') . "usuarios/verLogin");
+            exit();
+          }
+
         $id = $param[0];
 
         $datos = $this->model->verProfesores($id);

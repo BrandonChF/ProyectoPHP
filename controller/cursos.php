@@ -9,12 +9,24 @@ class Cursos extends Controller{
         $this->view->mensajeResultado = "";        
     }
     function render(){
+        
+        if (!parent::isAuthenticated()) {
+            // Redirigir al inicio de sesión o mostrar un mensaje de error
+            header("Location: " . constant('URL') . "usuarios/verLogin");
+            exit();
+          }
+
         $datos = $this->model->getCursos();               
         $this->view->datos = $datos;
         $this->view->render('cursos/index');
     }
 
-    function crear(){   //para ver la vista                   
+    function crear(){
+        if (!parent::isAuthenticated()) {
+            // Redirigir al inicio de sesión o mostrar un mensaje de error
+            header("Location: " . constant('URL') . "usuarios/verLogin");
+            exit();
+          }   //para ver la vista                   
         $this->view->datos = [];
         $this->view->mensaje = "Crear Cursos";
         $this->view->render('cursos/crear');
@@ -39,13 +51,25 @@ class Cursos extends Controller{
         $this->render();
     }
 
-    function detalle(){                      
+    function detalle(){
+        if (!parent::isAuthenticated()) {
+            // Redirigir al inicio de sesión o mostrar un mensaje de error
+            header("Location: " . constant('URL') . "usuarios/verLogin");
+            exit();
+          }                      
         $this->view->datos = [];
         $this->view->mensaje = "Detalles del Cursos";
         $this->view->render('cursos/detalle');
     }
 
-    function verCursos( $param = null ){        
+    function verCursos( $param = null ){ 
+
+        if (!parent::isAuthenticated()) {
+            // Redirigir al inicio de sesión o mostrar un mensaje de error
+            header("Location: " . constant('URL') . "usuarios/verLogin");
+            exit();
+          }
+
         $id = $param[0];
 
         $datos = $this->model->verCursos($id);        
@@ -85,7 +109,12 @@ class Cursos extends Controller{
     }    
 
     //eliminarcurso
-    function eliminarcurso( $param = null ){   
+    function eliminarcurso( $param = null ){
+        if (!parent::isAuthenticated()) {
+            // Redirigir al inicio de sesión o mostrar un mensaje de error
+            header("Location: " . constant('URL') . "usuarios/verLogin");
+            exit();
+          }   
         $id = $param[0];
         if ($this->model->eliminarcurso($id)){
             $mensajeResultado = '

@@ -9,26 +9,26 @@
 
       <div class="mb-3">
         <label for="" class="form-label">Cedula</label>
-        <input type="number" class="form-control" name="cedula" id="cedula" aria-describedby="helpId" required="true" placeholder="Ingresa la cedula del profesor" value="<?php echo isset($this->datos->cedula) ? $this->datos->cedula : ""; ?>">
+        <input type="number" class="form-control" name="cedula" id="cedula" aria-describedby="helpId" required="true" placeholder="Ingresa la cedula del estudiante" value="<?php echo isset($this->datos->cedula) ? $this->datos->cedula : ""; ?>">
         <small id="helpId" class="form-text text-muted">cedula aca</small>
       </div>
 
       <div class="mb-3">
         <label for="" class="form-label">Correo</label>
-        <input type="email" class="form-control" name="correoelectronico" id="correoelectronico" aria-describedby="helpId" aria-describedby="helpId" required="true" placeholder="Ingresa el correo del profesor" value="<?php echo isset($this->datos->correoelectronico) ? $this->datos->correoelectronico : ""; ?>">
+        <input type="email" class="form-control" name="correoelectronico" id="correoelectronico" aria-describedby="helpId" aria-describedby="helpId" required="true" placeholder="Ingresa el correo del estudiante" value="<?php echo isset($this->datos->correoelectronico) ? $this->datos->correoelectronico : ""; ?>">
         <small id="helpId" class="form-text text-muted">Correo aca</small>
       </div>
     </div>
     <div class="col-4">
       <div class="mb-3">
         <label for="" class="form-label">Telefono</label>
-        <input type="number" class="form-control" name="telefono" id="telefono" aria-describedby="helpId" required="true" placeholder="Ingresa el telefono del profesor" value="<?php echo isset($this->datos->telefono) ? $this->datos->telefono : ""; ?>">
+        <input type="number" class="form-control" name="telefono" id="telefono" aria-describedby="helpId" required="true" placeholder="Ingresa el telefono del estudiante" value="<?php echo isset($this->datos->telefono) ? $this->datos->telefono : ""; ?>">
         <small id="helpId" class="form-text text-muted">Telefono aca</small>
       </div>
 
       <div class="mb-3">
         <label for="" class="form-label">Telefono Celular</label>
-        <input type="number" class="form-control" name="telefonocelular" id="telefonocelular" aria-describedby="helpId" required="true" placeholder="Ingresa el Telefono Celular del profesor" value="<?php echo isset($this->datos->telefonocelular) ? $this->datos->telefonocelular : ""; ?>">
+        <input type="number" class="form-control" name="telefonocelular" id="telefonocelular" aria-describedby="helpId" required="true" placeholder="Ingresa el Telefono Celular del estudiante" value="<?php echo isset($this->datos->telefonocelular) ? $this->datos->telefonocelular : ""; ?>">
         <small id="helpId" class="form-text text-muted">Telefono Celular aca</small>
       </div>
     </div>
@@ -41,7 +41,7 @@
     <div class="col-4">
       <div class="mb-3">
         <label for="" class="form-label">Fecha Nacimiento</label>
-        <input type="date" class="form-control" name="fechanacimiento" id="fechanacimiento" aria-describedby="helpId" required="true" placeholder="Ingresa la Fecha Nacimiento del profesor" value="<?php echo isset($this->datos->fechanacimiento) ? $this->datos->fechanacimiento : ""; ?>">
+        <input type="date" class="form-control" name="fechanacimiento" id="fechanacimiento" aria-describedby="helpId" required="true" placeholder="Ingresa la Fecha Nacimiento del estudiante" value="<?php echo isset($this->datos->fechanacimiento) ? $this->datos->fechanacimiento : ""; ?>">
         <small id="helpId" class="form-text text-muted">Fecha Nacimiento aca</small>
       </div>
 
@@ -66,13 +66,13 @@
     <div class="col-4">
       <div class="mb-3">
         <label for="" class="form-label">Direccion</label>
-        <input type="text" class="form-control" name="direccion" id="direccion" aria-describedby="helpId" required="true" placeholder="Ingresa la Direccion del profesor" value="<?php echo isset($this->datos->direccion) ? $this->datos->direccion : ""; ?>">
+        <input type="text" class="form-control" name="direccion" id="direccion" aria-describedby="helpId" required="true" placeholder="Ingresa la Direccion del estudiante" value="<?php echo isset($this->datos->direccion) ? $this->datos->direccion : ""; ?>">
         <small id="helpId" class="form-text text-muted">Direccion aca</small>
       </div>
 
       <div class="mb-3">
         <label for="" class="form-label">Nombre</label>
-        <input type="text" class="form-control" name="nombre" id="nombre" aria-describedby="helpId" required="true" placeholder="Ingresa el nombre del profesor" value="<?php echo isset($this->datos->nombre) ? $this->datos->nombre : ""; ?>">
+        <input type="text" class="form-control" name="nombre" id="nombre" aria-describedby="helpId" required="true" placeholder="Ingresa el nombre del estudiante" value="<?php echo isset($this->datos->nombre) ? $this->datos->nombre : ""; ?>">
         <small id="helpId" class="form-text text-muted">Nombre aca</small>
       </div>
     </div>
@@ -86,20 +86,20 @@
     <div class="col-4">
       <div class="mb-3">
         <label for="" class="form-label">Apellido Paterno</label>
-        <input type="text" class="form-control" name="apellidopaterno" id="apellidopaterno" aria-describedby="helpId" required="true" placeholder="Ingresa el Apellido Paterno del profesor" value="<?php echo isset($this->datos->apellidopaterno) ? $this->datos->apellidopaterno : ""; ?>">
+        <input type="text" class="form-control" name="apellidopaterno" id="apellidopaterno" aria-describedby="helpId" required="true" placeholder="Ingresa el Apellido Paterno del estudiante" value="<?php echo isset($this->datos->apellidopaterno) ? $this->datos->apellidopaterno : ""; ?>">
         <small id="helpId" class="form-text text-muted">Apellido Paterno aca</small>
       </div>
 
       <div class="mb-3">
         <label for="" class="form-label">Apellido Materno</label>
-        <input type="text" class="form-control" name="apellidomaterno" id="apellidomaterno" aria-describedby="helpId" required="true" placeholder="Ingresa el Apellido Materno del profesor" value="<?php echo isset($this->datos->apellidomaterno) ? $this->datos->apellidomaterno : ""; ?>">
+        <input type="text" class="form-control" name="apellidomaterno" id="apellidomaterno" aria-describedby="helpId" required="true" placeholder="Ingresa el Apellido Materno del estudiante" value="<?php echo isset($this->datos->apellidomaterno) ? $this->datos->apellidomaterno : ""; ?>">
         <small id="helpId" class="form-text text-muted">Apellido Materno aca</small>
       </div>
     </div>
     <div class="col-4">
       <div class="mb-3">
         <label for="" class="form-label">Nacionalidad</label>
-        <input type="text" class="form-control" name="nacionalidad" id="nacionalidad" aria-describedby="helpId" required="true" placeholder="Ingresa la  Nacionalidad profesor" value="<?php echo isset($this->datos->nacionalidad) ? $this->datos->nacionalidad : ""; ?>">
+        <input type="text" class="form-control" name="nacionalidad" id="nacionalidad" aria-describedby="helpId" required="true" placeholder="Ingresa la  Nacionalidad estudiante" value="<?php echo isset($this->datos->nacionalidad) ? $this->datos->nacionalidad : ""; ?>">
         <small id="helpId" class="form-text text-muted">Nacionalidad aca</small>
       </div>
 
@@ -123,8 +123,8 @@
         <label for="" class="form-label">Grupo</label>
         <select class="form-select form-select-md" value="" name="idcarreras" id="idcarreras" required="true">
           <option value="<?php echo isset($this->datos->idCarreras) ? $this->datos->idCarreras
-                              : "Seleccione un grupo"; ?>"> <?php echo isset($this->datos->idCarreras) ? $nombreGrupo
-                              : "Seleccione un grupo"; ?> </option>
+                            : "Seleccione un grupo"; ?>"> <?php echo isset($this->datos->idCarreras) ? $nombreGrupo
+                                                              : "Seleccione un grupo"; ?> </option>
 
           <?php
           print($this->grupos);
@@ -144,10 +144,10 @@
       </div>
     </div>
   </div>
-</div>
 
-<div class="mb-3">
-  <button type="reset" class="btn btn-danger">Reset</button>
-  ||
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <div class="mb-3">
+    <button type="reset" class="btn btn-danger">Limpiar</button>
+    ||
+    <button type="submit" class="btn btn-primary">Guardar</button>
+  </div>
 </div>

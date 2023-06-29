@@ -38,7 +38,7 @@ class CursosModel extends Model{
         try {
             //code...
             $datos['id'] = "0";
-            $datos['usuario'] = "Prof Mario";
+            $datos['usuario'] = "BRENJUAN";
             $stringSQL = 'INSERT INTO curso(id, nombre, descripcion, tiempo, usuario) VALUES ( :id, :nombre, :descripcion, :tiempo, :usuario);';
             $query = $this->db->connect()->prepare($stringSQL);
             $query->execute($datos);
@@ -79,8 +79,7 @@ class CursosModel extends Model{
         try {
             //code... 
             //#UPDATE curso SET nombre='[value-2]',descripcion='[value-3]',tiempo='[value-4]',usuario='[value-5]' WHERE id='[value-1]'                     
-            $datos['usuario'] = "BranRrelos";
-            $stringSQL = 'UPDATE curso SET nombre=:nombre,descripcion=:descripcion,tiempo=:tiempo,usuario=:usuario WHERE id=:id ;';
+            $stringSQL = 'UPDATE curso SET nombre=:nombre,descripcion=:descripcion,tiempo=:tiempo WHERE id=:id ;';
             $query = $this->db->connect()->prepare($stringSQL);
             $query->execute($datos);
             return true;
