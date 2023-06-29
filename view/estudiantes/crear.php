@@ -9,5 +9,5 @@
     </form>
 </div>
 <?php
-    require 'view/footer.php';
+require 'view/footer.php';
 ?>
